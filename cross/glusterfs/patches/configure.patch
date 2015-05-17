@@ -1,0 +1,74 @@
+--- configure.orig	2015-05-17 13:24:41.606361136 +0300
++++ configure	2015-05-17 13:25:22.730361204 +0300
+@@ -17847,71 +17847,7 @@ fi
+ 
+ # Check the distribution where you are compiling glusterfs on
+ 
+-GF_DISTRIBUTION=
+-{ $as_echo "$as_me:$LINENO: checking for /etc/debian_version" >&5
+-$as_echo_n "checking for /etc/debian_version... " >&6; }
+-if test "${ac_cv_file__etc_debian_version+set}" = set; then
+-  $as_echo_n "(cached) " >&6
+-else
+-  test "$cross_compiling" = yes &&
+-  { { $as_echo "$as_me:$LINENO: error: cannot check for file existence when cross compiling" >&5
+-$as_echo "$as_me: error: cannot check for file existence when cross compiling" >&2;}
+-   { (exit 1); exit 1; }; }
+-if test -r "/etc/debian_version"; then
+-  ac_cv_file__etc_debian_version=yes
+-else
+-  ac_cv_file__etc_debian_version=no
+-fi
+-fi
+-{ $as_echo "$as_me:$LINENO: result: $ac_cv_file__etc_debian_version" >&5
+-$as_echo "$ac_cv_file__etc_debian_version" >&6; }
+-
+-{ $as_echo "$as_me:$LINENO: checking for /etc/SuSE-release" >&5
+-$as_echo_n "checking for /etc/SuSE-release... " >&6; }
+-if test "${ac_cv_file__etc_SuSE_release+set}" = set; then
+-  $as_echo_n "(cached) " >&6
+-else
+-  test "$cross_compiling" = yes &&
+-  { { $as_echo "$as_me:$LINENO: error: cannot check for file existence when cross compiling" >&5
+-$as_echo "$as_me: error: cannot check for file existence when cross compiling" >&2;}
+-   { (exit 1); exit 1; }; }
+-if test -r "/etc/SuSE-release"; then
+-  ac_cv_file__etc_SuSE_release=yes
+-else
+-  ac_cv_file__etc_SuSE_release=no
+-fi
+-fi
+-{ $as_echo "$as_me:$LINENO: result: $ac_cv_file__etc_SuSE_release" >&5
+-$as_echo "$ac_cv_file__etc_SuSE_release" >&6; }
+-
+-{ $as_echo "$as_me:$LINENO: checking for /etc/redhat-release" >&5
+-$as_echo_n "checking for /etc/redhat-release... " >&6; }
+-if test "${ac_cv_file__etc_redhat_release+set}" = set; then
+-  $as_echo_n "(cached) " >&6
+-else
+-  test "$cross_compiling" = yes &&
+-  { { $as_echo "$as_me:$LINENO: error: cannot check for file existence when cross compiling" >&5
+-$as_echo "$as_me: error: cannot check for file existence when cross compiling" >&2;}
+-   { (exit 1); exit 1; }; }
+-if test -r "/etc/redhat-release"; then
+-  ac_cv_file__etc_redhat_release=yes
+-else
+-  ac_cv_file__etc_redhat_release=no
+-fi
+-fi
+-{ $as_echo "$as_me:$LINENO: result: $ac_cv_file__etc_redhat_release" >&5
+-$as_echo "$ac_cv_file__etc_redhat_release" >&6; }
+-
+-
+-if test "x$ac_cv_file__etc_debian_version" = "xyes"; then
+    GF_DISTRIBUTION=Debian
+-fi
+-if test "x$ac_cv_file__etc_SuSE_release" = "xyes"; then
+-   GF_DISTRIBUTION=SuSE
+-fi
+-if test "x$ac_cv_file__etc_redhat_release" = "xyes"; then
+-   GF_DISTRIBUTION=Redhat
+-fi
+ 
+ 
+ 

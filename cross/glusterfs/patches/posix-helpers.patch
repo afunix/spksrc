@@ -1,0 +1,19 @@
+--- xlators/storage/posix/src/posix-helpers.c.orig	2015-05-17 13:38:50.562362541 +0300
++++ xlators/storage/posix/src/posix-helpers.c	2015-05-17 13:39:55.494362648 +0300
+@@ -1598,13 +1598,15 @@ posix_fsyncer_syncfs (xlator_t *this, st
+         /* syncfs() is not "declared" in RHEL's glibc even though
+            the kernel has support.
+         */
++/*
+ #include <sys/syscall.h>
+ #include <unistd.h>
+ #ifdef SYS_syncfs
+         syscall (SYS_syncfs, pfd->fd);
+ #else
++*/
+         sync();
+-#endif
++//#endif
+ #else
+         sync();
+ #endif
